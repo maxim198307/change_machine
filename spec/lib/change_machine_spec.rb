@@ -1,4 +1,7 @@
-require_relative 'change_machine.rb'
+require 'change_machine.rb'
+require 'rantly'
+require 'rantly/rspec_extensions'
+require 'rantly/shrinks'
 
 describe ChangeMachine do
   describe '.calculate_change' do
@@ -23,6 +26,14 @@ describe ChangeMachine do
       let(:expected_result) { { 200 => 0, 100 => 1, 25 => 1, 10 => 0, 5 => 1, 1 => 2 } }
 
       it { is_expected.to eq(expected_result) }
+    end
+
+    it 'returns a result hash with any arbitrary integer given' do
+       property_of {
+         integer
+       }.check { |i|
+         expect(described_class.calculate_change(i)).to be_a(Hash)
+       }
     end
   end
 end
