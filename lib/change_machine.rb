@@ -4,8 +4,7 @@ module ChangeMachine
 
     coins.keys.each_with_object(coins) do |denomination, memo|
       if input >= denomination
-        mod = input / denomination
-        memo[denomination] = mod
+        memo[denomination] = input / denomination
         input = input % denomination
       end
     end
