@@ -1,1 +1,1 @@
-# change_machine
+Given the coins 1, 5, 10, 25, 100, 200, what is the minimum number of coins needed to make change for x, and what coins do you use? For instance if you need to make change for 53 cents you need five coins, two quarters (25 cents), and three pennies (1 cent). You have an infinite number of coins to dispense change with (aren't you special).
